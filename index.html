@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>crystal game</title>
+
+<!-- Here we added a link to the jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <!--Link CSS reset sheet-->
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+<!--Link CSS user style sheet-->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<!--Bootstrap-->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+</head>
+<body>
+
+<div class="container">
+	<h1>Crystals Game</h1>
+
+	
+
+</div>
+
+<div class="container">
+
+<p>The player will recieve a random number at the beginning of the game.</p>
+
+<p>There are four crystals below- by clicking on a crystal you will add a specific amount of points to your total score.</p>
+
+<p>You win the game by matching your total score to the random number, you will lose the game if your total score goes above the random number.</p>
+
+<p>
+The value of each crystal is hidden from you until you click on it.</p>
+
+<p>
+Each time when the game starts, the game will change the values of each crystal</p>
+
+
+</div>
+
+<div class="container" id="crystals"> 
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6">
+
+<!-- Here we add four crystal images -->
+			<span><img id="pink" src="https://s-media-cache-ak0.pinimg.com/236x/3d/06/e8/3d06e877582b38da27e909eb7a89b345.jpg" alt="crystals" height="200px" width="200px" ></span>
+
+			<span><img id="blue" src="http://vignette2.wikia.nocookie.net/wowwiki/images/0/0c/Crushed_Basilisk_Crystals.jpg/revision/latest?cb=20091117234446" alt="crystals" height="200px" width="200px" ></span>
+
+			<span><img id="rainbow" src="http://naturalchakrahealing.com/images/rainbowquartzcrystals.png" alt="crystals" height="200px" width="200px" ></span>
+
+			<span><img id="yellow  " src="http://www.marinmineral.com/db_pics/pics/e584c.jpg" alt="crystals" height="200px" width="200px"></span>
+
+
+
+		</div>
+		
+		<div class="container" id="scores">
+			<div class="col-sm-6 col-md-6 col-lg-6">
+
+				<h2 id="clickHere">Click Here To Begin</h2>
+
+				<h2 id="gameNumber"></h2>
+
+			</div>
+		
+		</div>
+	
+	</div>
+
+</div>
+<!-- Below is where our Javascript code will go -->
+
+
+
+
+
+<script src="assets/javascript/game.js"></script>
+</body>
+</html>
