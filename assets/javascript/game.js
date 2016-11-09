@@ -1,70 +1,209 @@
 $(document).ready(function(){
-    
+
 console.log("ready!");
+
+var maximum = 120;
+
+var minimum =  19;
+		
+ //Selects random number to manifest itself at the beginning of the game
+ //Will land between 19-120  
+
+targetNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+
+
+
+//Sets up random numbers for each jewel
+var maximum = 12;
+var minimum =  1;
+
+var yellowNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+var blueNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+var pinkNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+var rainbowNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+
+
+
+var score = 0;
+var wins = 0;
+var losses = 0;
+
+
+//Functions
+
+
+function reset(){
+
+	var maximum = 120;
+	var minimum =  19;
+
+	targetNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+	$("#gameNumber").html(targetNumber);
+	
+	var maximum = 12;
+	var minimum =  1;
+
+	yellowNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+	blueNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+	pinkNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+	rainbowNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+
+
+
+	score = 0;
+	$("#scoreDisplay").html(score);
+	
+
+};
+
+
+function lose(){
+
+	losses++;
+	$("#lossesDisplay").html(losses);
+
+
+
+}
+
+function win() {
+
+	wins++;
+	$("#winsDisplay").html(wins);
+
+}
+
+
+
 
 $("#clickHere").on("click", function(){
 
-		var maximum = 120;
-		var minimum =  19;
-
-		var randomNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
 		
-		console.log(randomNumber);
+	console.log(targetNumber);
 		
-		$("#gameNumber").append(randomNumber);
+	$("#gameNumber").append(targetNumber);
 	
-		$("#clickHere").remove();
+	$("#clickHere").remove();
 
 
 	}); 
- 
-var counter = 0;
-  $("#yellow").on("click", function() {
 
-    	var maximum = 12;
-		var minimum =  1;
-
-		var randomNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
-
-		console.log(randomNumber);
-  		//Push randomNumber to Overall Counter
-  	
-  	});
+  /////////////////////////////////////////
 
 
-$("#blue").on("click", function() {
 
-    	var maximum = 12;
-		var minimum =  1;
+ $("#yellow").on("click", function(){
 
-		var randomNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+    console.log(yellowNumber);
+		score += yellowNumber;
+		console.log(score);
+  		$("#scoreDisplay").html(score);
+  
+	if(targetNumber == score){
 
-		console.log(randomNumber);
+		win();
+
+		reset();
+
+	} else if (score > targetNumber){
+
+		lose();
+
+		reset();
+	}
+	
+
+
+	});
+
+
+$("#blue").on("click", function(){
+
+    	
+	console.log(blueNumber);
+		score += blueNumber;
+		console.log(score);
+  		$("#scoreDisplay").html(score);
+		
+		if(targetNumber == score){
+
+		win();
+
+		reset();
+
+
+	} else if (score > targetNumber){
+
+		lose();
+
+		reset();
+
+	}
+  
+
+
 
   });
 
 $("#pink").on("click", function() {
 
-    	var maximum = 12;
-		var minimum =  1;
+ 	
+ 	console.log(pinkNumber);
+		score += pinkNumber;
+		console.log(score);
+  		$("#scoreDisplay").html(score);
 
-		var randomNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+	
+ 
+  	if(targetNumber == score){
 
-		console.log(randomNumber);
+		win();
 
-  });
+		reset();
 
-$("#rainbow").on("click", function() {
 
-    	var maximum = 12;
-		var minimum =  1;
+	} else if (score > targetNumber){
 
-		var randomNumber = Math.floor(Math.random()*(maximum-minimum +1))+minimum;
+		lose();
 
-		console.log(randomNumber);
+		reset();
 
-  });
+	}
 
+
+
+ });
+
+$("#rainbow").on("click", function(){
+
+	console.log(rainbowNumber);
+		score += rainbowNumber;
+		console.log(score);
+  		$("#scoreDisplay").html(score);
+  
+	if(targetNumber == score){
+
+		win();
+
+		reset();
+
+	} else if (score > targetNumber){
+
+		lose();
+
+		reset();
+
+	}
+
+
+	});
+
+
+$("#resetButton").on("click", function(){
+
+	reset(); 
+
+});
 
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>crystal game</title>
+  <title>Crystals Game</title>
 
 <!-- Here we added a link to the jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -31,15 +31,15 @@
 
 <p>The player will recieve a random number at the beginning of the game.</p>
 
-<p>There are four crystals below- by clicking on a crystal you will add a specific amount of points to your total score.</p>
+<p>Look at the four crystals below; by clicking on a crystal, the player will add a specific amount of points to the total score.</p>
 
-<p>You win the game by matching your total score to the random number, you will lose the game if your total score goes above the random number.</p>
-
-<p>
-The value of each crystal is hidden from you until you click on it.</p>
+<p>The player can win the game by matching the total score with the random number. A loss will occur if the total score exceeds the random number.</p>
 
 <p>
-Each time when the game starts, the game will change the values of each crystal</p>
+The value of each crystal remains hidden, until the player clicks it.</p>
+
+<p>
+Each time the game resets, it will change the value of each crystal</p>
 
 
 </div>
@@ -55,18 +55,27 @@ Each time when the game starts, the game will change the values of each crystal<
 
 			<span><img id="rainbow" src="http://naturalchakrahealing.com/images/rainbowquartzcrystals.png" alt="crystals" height="200px" width="200px" ></span>
 
-			<span><img id="yellow  " src="http://www.marinmineral.com/db_pics/pics/e584c.jpg" alt="crystals" height="200px" width="200px"></span>
+			<span><img id="yellow" src="http://www.marinmineral.com/db_pics/pics/e584c.jpg" alt="crystals" height="200px" width="200px"></span>
 
 
 
 		</div>
 		
 		<div class="container" id="scores">
+			
 			<div class="col-sm-6 col-md-6 col-lg-6">
 
-				<h2 id="clickHere">Click Here To Begin</h2>
+				<h3 id="clickHere">Click Here to Reveal a Random Number</h3>
 
 				<h2 id="gameNumber"></h2>
+				
+				<h4>Score: <span id="scoreDisplay">0</span></h4>
+
+				<h4>Wins: <span id="winsDisplay">0</span></h4>
+				
+				<h4>Losses: <span id="lossesDisplay">0</span></h4>
+			
+			    <button type="button" id="resetButton" class="btn btn-primary">Reset</button>
 
 			</div>
 		
